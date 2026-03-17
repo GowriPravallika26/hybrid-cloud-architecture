@@ -1,0 +1,14 @@
+{
+  "gcp": {
+    "cloud_run_service_name": "pravallika-cloudrun-service",
+    "gcs_bucket_name": "pravallika-gcs-bucket-489008",
+    "db_instance_name": "pravallika-postgres-db",
+    "db_user": "postgres",
+    "db_password": "postgres123"
+  },
+  "localstack": {
+    "s3_bucket_name": "pravallika-s3-bucket",
+    "sqs_queue_name": "pravallika-sqs-queue",
+    "lambda_function_name": "pravallika-lambda"
+  }
+}

@@ -1,0 +1,29 @@
+services:
+  # LocalStack service
+  localstack:
+    container_name: localstack_main
+    image: localstack/localstack:latest
+    ports:
+      - "4566:4566"                 # main endpoint for all services
+      - "4510-4559:4510-4559"       # edge ports for services
+    environment:
+      - DEBUG=1
+      - SERVICES=s3,sqs,lambda
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    volumes:
+      - ./volume:/var/lib/localstack
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  # Hybrid bridge service (Python container)
+  hybrid_bridge:
+    build: ./bridge
+    container_name: hybrid_bridge
+    environment:
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_ENDPOINT_URL=http://localstack:4566
+      - QUEUE_NAME=test-queue        # optional: name of the queue to listen
+    depends_on:
+      - localstack
+
