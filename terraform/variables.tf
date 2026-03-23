@@ -1,7 +1,7 @@
 variable "gcp_project_id" {
   description = "GCP Project ID"
   type        = string
-  default     = "hybrid-cloud-489008"
+  default     = "cloudarchitecture-491104"
 }
 
 variable "gcp_region" {

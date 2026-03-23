@@ -1,3 +1,3 @@
-gcp_project_id = "project-ce9a376e-637a-4ecc-83d"
+gcp_project_id = "cloudarchitecture-491104"
 gcp_region     = "us-central1"
 

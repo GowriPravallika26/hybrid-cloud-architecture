@@ -1,5 +1,5 @@
 resource "google_storage_bucket" "gcs_bucket" {
-  name          = "pravallika-gcs-bucket-489008"
+  name          = "pravallika-gcs-bucket-491104"
   location      = "US-CENTRAL1"
   storage_class = "STANDARD"
 
